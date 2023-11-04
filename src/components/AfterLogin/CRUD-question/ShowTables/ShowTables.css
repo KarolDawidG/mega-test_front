@@ -1,0 +1,24 @@
+.text-center {
+  text-align: center;
+}
+
+.actions-cell {
+  width: 80px; 
+}
+.no-cell {
+  width: 10px; 
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  width: auto;
+  margin: 0; 
+  text-align: center;
+}
+
+.my-custom-scrollbar {
+  position: relative;
+  overflow: auto;
+  }

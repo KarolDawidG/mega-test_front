@@ -1,0 +1,25 @@
+@media (max-width: 768px) {
+    .navbar-expand-lg .navbar-toggler {
+      display: block;
+    }
+    .collapse.navbar-collapse {
+      display: none;
+    }
+    .navbar-collapse.show {
+      display: block;
+      transition: all 0.3s; 
+    }
+    .collapse.navbar-collapse {
+  position: absolute;
+  margin: 5px;
+  width: 98%;
+  top: 100%;
+  left: 1px;
+  background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity)); /* color of bootstrap bg-dark */
+  border-radius: 1%;
+  z-index: 999; 
+}
+  .button {
+    width: 150px;
+  }
+  }
