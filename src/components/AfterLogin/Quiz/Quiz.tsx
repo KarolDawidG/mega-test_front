@@ -51,7 +51,7 @@ export const Quiz: React.FC = () => {
     handleTestName();
     setIsAuthenticated(!!token);
     axios
-      .get(`http://localhost:3001/quiz/${tableName}`)
+      .get(`https://backend-test.ct8.pl/quiz/${tableName}`)
       .then((response) => {
         setQuestions(response.data.quizeData);
       })

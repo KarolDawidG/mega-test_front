@@ -35,7 +35,7 @@ export const EditForm: React.FC<EditFormProps> = ({
 
     try {
       await axios.put(
-        `http://localhost:3001/create-question/${tableName}/${question.id}`,
+        `https://backend-test.ct8.pl/create-question/${tableName}/${question.id}`,
         formData,
       );
 

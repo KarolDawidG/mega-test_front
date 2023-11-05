@@ -10,7 +10,7 @@ export const CreateTable = () => {
   const handleFormSubmit = async () => {
     try {
       await axios.post(
-        `http://localhost:3001/create-table/${username}/${inputvalue}`,
+        `https://backend-test.ct8.pl/create-table/${username}/${inputvalue}`,
       );
     } catch (error: any) {
       handleNetworkError(error);
@@ -32,7 +32,6 @@ export const CreateTable = () => {
         />
         <button type="submit" className="btn btn-primary ml-2">
           {" "}
-          {/* Add margin class ml-2 */}
           Create
         </button>
       </>

@@ -40,7 +40,7 @@ export const QuestionTable: React.FC<QuestionTableProps> = ({
   const handleDelete = async (tableName: string | undefined, id: number) => {
     try {
       await axios.delete(
-        `http://localhost:3001/create-question/${tableName}/${id}`,
+        `https://backend-test.ct8.pl/create-question/${tableName}/${id}`,
       );
       navigate(0);
     } catch (error: any) {
