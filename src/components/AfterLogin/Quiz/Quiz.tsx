@@ -100,13 +100,13 @@ export const Quiz: React.FC = () => {
         <Header nazwaTabeli={testName} />
         <div className="container-sm d-flex justify-content-center align-items-center vh-10">
           <div className="text-center text-danger">
-            <h1>Quiz zakończony!</h1>
-            <p className="h2">Zdobyłeś: {score} pkt</p>
+            <h1>Quiz complete!</h1>
+            <p className="h2">You gained:{score} pkt</p>
             <button
               className="btn btn-outline-danger btn-lg"
               onClick={handleRestartQuiz}
             >
-              Zagraj jeszcze raz
+              Play again!
             </button>
             <RedirectBtn to="/after-login">Menu</RedirectBtn>
           </div>
@@ -123,7 +123,7 @@ export const Quiz: React.FC = () => {
         <div className="row">
           {questions.length > 0 && (
             <div className="col-md-6">
-              <h1 className="text-white ">Pytanie {currentQuestion + 1}:</h1>
+              <h1 className="text-white ">Question {currentQuestion + 1}:</h1>
               <p className="quiz-question text-white">
                 {questions[currentQuestion].question}
               </p>
@@ -157,16 +157,16 @@ export const Quiz: React.FC = () => {
           )}
 
           <div className="col-md-6">
-            {isCorrect && <p className="correct-answer">Odpowiedź poprawna!</p>}
+            {isCorrect && <p className="correct-answer">Correct answer!</p>}
             {!isCorrect && isCorrect !== null && (
               <>
-                <p className="incorrect-answer">Odpowiedź niepoprawna.</p>
+                <p className="incorrect-answer">The answer is incorrect.</p>
                 <br />
                 <p className="incorrect-answer_p">
                   {questions[currentQuestion - 1].question}
                 </p>
                 <p className="incorrect-answer_p text-white">
-                  Poprawna odpowiedź to:{" "}
+                The correct answer is:{" "}
                   {questions[currentQuestion - 1].correctAnswer}
                 </p>
               </>
@@ -177,14 +177,14 @@ export const Quiz: React.FC = () => {
                 className="btn btn-outline-success btn-lg"
                 onClick={handleNextQuestion}
               >
-                Następne
+                Next
               </button>
               {previousQuestionAnswered && (
                 <button
                   className="btn btn-outline-danger btn-lg"
                   onClick={handlePreviousQuestion}
                 >
-                  Cofnij
+                  Back
                 </button>
               )}
               <RedirectBtn to="/after-login">Menu</RedirectBtn>
