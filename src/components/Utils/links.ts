@@ -35,4 +35,4 @@ export const INTERNET_DISCONNECTED =
 
 export const LOG_OUT = "The user has been logged out!";
 
-export const REACT_APP_SITE_KEY = "6LfeZQcoAAAAAIzOsGl5iQj6j2NFP1MwR02ABHIu";
+export const REACT_APP_SITE_KEY = "6Ld-GP8nAAAAAJs0_ZX4k-0Q73yTVWXYXPjum-n-";
