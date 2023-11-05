@@ -1,37 +1,37 @@
-export const ENDPOINT_ADMIN = "http://localhost:3001/admin";
+export const ENDPOINT_ADMIN = "http://backend-test.ct8.pl/admin";
 
-export const ENDPOINT_AUTH = "http://localhost:3001/auth";
+export const ENDPOINT_AUTH = "http://backend-test.ct8.pl/auth";
 
-export const ENDPOINT_USERS = "http://localhost:3001/users";
+export const ENDPOINT_USERS = "http://backend-test.ct8.pl/users";
 
-export const ENDPOINT_REGISTER = "http://localhost:3001/register";
+export const ENDPOINT_REGISTER = "http://backend-test.ct8.pl/register";
 
-export const ENDPOINT_RESET = "http://localhost:3001/reset";
+export const ENDPOINT_RESET = "http://backend-test.ct8.pl/reset";
 
-export const ENDPOINT_EMAIL = "http://localhost:3001/forgot";
+export const ENDPOINT_EMAIL = "http://backend-test.ct8.pl/forgot";
 
-export const ENDPOINT_LOGOUT = "http://localhost:3001/logout";
+export const ENDPOINT_LOGOUT = "http://backend-test.ct8.pl/logout";
 
-export const LINK_RESET = "http://localhost:3000/reset";
+export const LINK_RESET = "https://mega-test.netlify.app/reset";
 
-export const ENDPOINT_REFRESH = "http://localhost:3001/auth/refresh";
+export const ENDPOINT_REFRESH = "http://backend-test.ct8.pl/auth/refresh";
 
-export const ENDPOINT_CAPTCHA = `http://localhost:3001/cap`;
+export const ENDPOINT_CAPTCHA = `http://backend-test.ct8.pl/cap`;
 
-export const ENDPOINT_DELETE = "http://localhost:3001/users/";
+export const ENDPOINT_DELETE = "http://backend-test.ct8.pl/users/";
 
-export const ENDPOINT_UPDATE = "http://localhost:3001/users";
+export const ENDPOINT_UPDATE = "http://backend-test.ct8.pl/users";
 
-export const QUIZ = "http://localhost:3001/quiz/";
+export const QUIZ = "http://backend-test.ct8.pl/quiz/";
 
-export const QUIZ_20 = "http://localhost:3001/quiz-20";
+export const QUIZ_20 = "http://backend-test.ct8.pl/quiz-20";
 
-export const ENDPOINT_CONTACT = 'http://localhost:3001/contact-form';
+export const ENDPOINT_CONTACT = 'http://backend-test.ct8.pl/contact-form';
 
 export const ADMIN_ROLE = "admin";
 
 export const INTERNET_DISCONNECTED =
-  "Ye be sailing in the Bermuda Triangle, matey! The internet be lost in Davy Jones' locker!";
+  "Brak komunikacji z serwerem zewnętrznym. Sprawdz połączenie internetowe!";
 
 export const LOG_OUT = "The user has been logged out!";
 
