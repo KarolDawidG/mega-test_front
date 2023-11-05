@@ -28,6 +28,7 @@ export const QUIZ_20 = "https://backend-test.ct8.pl/quiz-20";
 
 export const ENDPOINT_CONTACT = 'https://backend-test.ct8.pl/contact-form';
 
+
 export const ADMIN_ROLE = "admin";
 
 export const INTERNET_DISCONNECTED =
