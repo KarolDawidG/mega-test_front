@@ -13,7 +13,7 @@ export const Menu = () => {
               <img src="img/baba.png" alt="Baba cyborg" className="img-fluid" />
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 text-center text-md-start p-4">
             <h2 className="text-white">Multiple-Choice Test Creation App</h2>
             <p className="lead text-white">
               This is a tool that enables you to create, edit, export, import,
