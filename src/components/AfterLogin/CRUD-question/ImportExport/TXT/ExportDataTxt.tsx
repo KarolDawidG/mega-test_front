@@ -14,7 +14,7 @@ export const ExportDataTxt: React.FC<ImportExportProps> = ({
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/export/${tableName}`,
+        `https://backend-test.ct8.pl/export/${tableName}`,
       );
       saveDataToFileTxt(response.data.tableData, fileName, onClose);
     } catch (error) {
