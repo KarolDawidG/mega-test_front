@@ -11,7 +11,7 @@ export const CreateTable = () => {
   const handleFormSubmit = async () => {
     try {
       await axios.post(
-        `http://localhost:3001/create-table/${username}/${inputvalue}`,
+        `https://backend-test.ct8.pl/create-table/${username}/${inputvalue}`,
       );
     } catch (error: any) {
       handleNetworkError(error);

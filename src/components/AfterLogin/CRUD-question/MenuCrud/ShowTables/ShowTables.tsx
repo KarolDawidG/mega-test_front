@@ -16,7 +16,7 @@ export const ShowTables = () => {
 
   const handleDelete = async (tableName: any) => {
     try {
-      await axios.delete(`http://localhost:3001/create-table/${tableName}`);
+      await axios.delete(`https://backend-test.ct8.pl/${tableName}`);
       const updatedTableNames = tableNames.filter((name) => name !== tableName);
       setTableNames(updatedTableNames);
     } catch (error: any) {
