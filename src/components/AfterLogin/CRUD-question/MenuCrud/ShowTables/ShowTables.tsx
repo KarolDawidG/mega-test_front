@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./ShowTables.css";
-import { handleNetworkError } from "../../../Utils/handlers/networkErrorFunctions";
+import { handleNetworkError } from "../../../../Utils/handlers/networkErrorFunctions";
 import {
   removeFirstCharacter,
   removePart,
@@ -16,7 +16,7 @@ export const ShowTables = () => {
 
   const handleDelete = async (tableName: any) => {
     try {
-      await axios.delete(`https://backend-test.ct8.pl/create-table/${tableName}`);
+      await axios.delete(`http://localhost:3001/create-table/${tableName}`);
       const updatedTableNames = tableNames.filter((name) => name !== tableName);
       setTableNames(updatedTableNames);
     } catch (error: any) {
@@ -31,7 +31,7 @@ export const ShowTables = () => {
       setUsername(savedUsername);
     }
     axios
-      .get(`https://backend-test.ct8.pl/create-table/${savedUsername}`)
+      .get(`http://localhost:3001/create-table/${savedUsername}`)
       .then((response) => {
         const {
           data: { tablesUser: tableNamesArray },
@@ -46,8 +46,7 @@ export const ShowTables = () => {
 
   return (
     <>
-      <p className="p-1 mb-1 bg-success text-white">
-        {" "}
+      <p className="p-1 mb-0 bg-success text-white">
         List of available tables:
       </p>
 
@@ -94,9 +93,6 @@ export const ShowTables = () => {
               </tr>
             ))}
           </tbody>
-          <caption>
-            <p className="text-info">List of egzams</p>
-          </caption>
         </table>
       </div>
     </>

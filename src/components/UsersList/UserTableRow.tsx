@@ -47,7 +47,6 @@ export const UserTableRow = (props: Props) => {
           Usuń
         </button>
       </td>
-      
       <td>
         <button
           className="btn btn-outline-secondary"

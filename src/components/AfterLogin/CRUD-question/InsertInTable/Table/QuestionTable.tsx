@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { QuestionsListProps } from "../../../../Utils/Interfaces/QuestionListProps";
 import axios from "axios";
 import { handleNetworkError } from "../../../../Utils/handlers/networkErrorFunctions";
 import { useNavigate } from "react-router-dom";
@@ -7,11 +6,7 @@ import "./QuestionTable.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { EditForm } from "../../EditTable/EditForm";
 import { TableColumn } from "./helpers/TableColumn";
-
-interface QuestionTableProps {
-  questionsList: QuestionsListProps[] | null;
-  tableName: string | undefined;
-}
+import { QuestionTableProps } from "../../Interface/QuestionTableProps";
 
 export const QuestionTable: React.FC<QuestionTableProps> = ({
   questionsList,
@@ -40,7 +35,7 @@ export const QuestionTable: React.FC<QuestionTableProps> = ({
   const handleDelete = async (tableName: string | undefined, id: number) => {
     try {
       await axios.delete(
-        `https://backend-test.ct8.pl/create-question/${tableName}/${id}`,
+        `http://localhost:3001/create-question/${tableName}/${id}`,
       );
       navigate(0);
     } catch (error: any) {
@@ -50,7 +45,7 @@ export const QuestionTable: React.FC<QuestionTableProps> = ({
 
   return (
     <>
-      <p className="p-3 mb-2 bg-success text-white"> List of questions: </p>
+      <p className="p-1 mb-0 bg-success text-white rounded-2"> List of questions: </p>
       <div className="question-table my-custom-scrollbar">
         <table className="table table-hover">
           <thead>
@@ -95,7 +90,7 @@ export const QuestionTable: React.FC<QuestionTableProps> = ({
                   <td>{question.correctAnswer}</td>
                   <td>
                     <button
-                      className="btn btn-danger"
+                      className="btn btn-danger btn-sm"
                       onClick={() => handleDelete(tableName, question.id)}
                     >
                       Delete
@@ -103,7 +98,7 @@ export const QuestionTable: React.FC<QuestionTableProps> = ({
                   </td>
                   <td>
                     <button
-                      className="btn btn-success"
+                      className="btn btn-success btn-sm"
                       onClick={() => handleEditClick(question)}
                     >
                       Update
@@ -124,9 +119,7 @@ export const QuestionTable: React.FC<QuestionTableProps> = ({
               />
             )}
           </tbody>
-          <caption>
-            <p className="text-info">List of questions</p>
-          </caption>
+
         </table>
       </div>
     </>

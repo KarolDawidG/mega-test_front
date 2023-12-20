@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Question } from "./InterfaceQuiz";
+import { Question } from "./Utils/InterfaceQuiz";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Quiz.css";
 import { BeLogin } from "../../Authentication/Login/BeLogin";
@@ -14,14 +14,10 @@ import {
   replaceCharacter,
   removeFirstCharacter,
   removePart,
-} from "../CRUD-question/ShowTables/utils/stringHelpers";
+} from "../CRUD-question/MenuCrud/ShowTables/utils/stringHelpers";
 import { Footer } from "../MainMenu/Footer/Footer";
-
-enum AnswerOption {
-  A = "A",
-  B = "B",
-  C = "C",
-}
+import { quizStrings } from "./Utils/QuizStrings";
+import { AnswerOption } from "./Utils/AnswerOption";
 
 export const Quiz: React.FC = () => {
   const { tableName } = useParams<string>();
@@ -51,7 +47,7 @@ export const Quiz: React.FC = () => {
     handleTestName();
     setIsAuthenticated(!!token);
     axios
-      .get(`https://backend-test.ct8.pl/quiz/${tableName}`)
+      .get(`http://localhost:3001/quiz/${tableName}`)
       .then((response) => {
         setQuestions(response.data.quizeData);
       })
@@ -100,13 +96,13 @@ export const Quiz: React.FC = () => {
         <Header nazwaTabeli={testName} />
         <div className="container-sm d-flex justify-content-center align-items-center vh-10">
           <div className="text-center text-danger">
-            <h1>Quiz complete!</h1>
-            <p className="h2">You gained:{score} pkt</p>
+            <h1>{quizStrings.end}</h1>
+            <p className="h2">{quizStrings.score} {score}!</p>
             <button
               className="btn btn-outline-danger btn-lg"
               onClick={handleRestartQuiz}
             >
-              Play again!
+              {quizStrings.again}
             </button>
             <RedirectBtn to="/after-login">Menu</RedirectBtn>
           </div>
@@ -123,7 +119,7 @@ export const Quiz: React.FC = () => {
         <div className="row">
           {questions.length > 0 && (
             <div className="col-md-6">
-              <h1 className="text-white ">Question {currentQuestion + 1}:</h1>
+              <h1 className="text-white ">{quizStrings.question} {currentQuestion + 1}:</h1>
               <p className="quiz-question text-white">
                 {questions[currentQuestion].question}
               </p>
@@ -157,16 +153,16 @@ export const Quiz: React.FC = () => {
           )}
 
           <div className="col-md-6">
-            {isCorrect && <p className="correct-answer">Correct answer!</p>}
+            {isCorrect && <p className="correct-answer">{quizStrings.correct}</p>}
             {!isCorrect && isCorrect !== null && (
               <>
-                <p className="incorrect-answer">The answer is incorrect.</p>
+                <p className="incorrect-answer">{quizStrings.incorrect}</p>
                 <br />
                 <p className="incorrect-answer_p">
                   {questions[currentQuestion - 1].question}
                 </p>
                 <p className="incorrect-answer_p text-white">
-                The correct answer is:{" "}
+                  {quizStrings.whichAnswer}{" "}
                   {questions[currentQuestion - 1].correctAnswer}
                 </p>
               </>
@@ -177,14 +173,14 @@ export const Quiz: React.FC = () => {
                 className="btn btn-outline-success btn-lg"
                 onClick={handleNextQuestion}
               >
-                Next
+                {quizStrings.next}
               </button>
               {previousQuestionAnswered && (
                 <button
                   className="btn btn-outline-danger btn-lg"
                   onClick={handlePreviousQuestion}
                 >
-                  Back
+                  {quizStrings.back}
                 </button>
               )}
               <RedirectBtn to="/after-login">Menu</RedirectBtn>

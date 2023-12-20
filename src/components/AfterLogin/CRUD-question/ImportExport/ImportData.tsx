@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./ImportExport.css";
 import "bootstrap/dist/css/bootstrap.css";
-import { notify } from "../../../../Others/Notify";
-import { ImportExportProps } from "./ImportExportProps";
+import { ImportExportProps } from "./helpers/ImportExportProps";
+import { notify } from "../../../Others/Notify";
 
 export const ImportData: React.FC<ImportExportProps> = ({
   tableName,
@@ -67,7 +67,7 @@ export const ImportData: React.FC<ImportExportProps> = ({
 
   const saveDataToServer = async (jsonData: any) => {
     try {
-      await axios.post(`https://backend-test.ct8.pl/import/${tableName}`, jsonData);
+      await axios.post(`http://localhost:3001/import/${tableName}`, jsonData);
     } catch (error) {
       console.error("Error while adding a question: ", error);
     }

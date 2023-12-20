@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./ImportExport.css";
+import "../ImportExport.css";
 import "bootstrap/dist/css/bootstrap.css";
-import { ImportExportProps } from "./ImportExportProps";
-import { saveDataToFile } from "./helpers/saveDataToFile";
+import { ImportExportProps } from "../helpers/ImportExportProps";
+import { saveDataToFileTxt } from "./saveDataToFileTxt";
 
-export const ExportData: React.FC<ImportExportProps> = ({
+export const ExportDataTxt: React.FC<ImportExportProps> = ({
   tableName,
   onClose,
 }) => {
@@ -14,9 +14,9 @@ export const ExportData: React.FC<ImportExportProps> = ({
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `https://backend-test.ct8.pl/export/${tableName}`,
+        `http://localhost:3001/export/${tableName}`,
       );
-      saveDataToFile(response.data.tableData, fileName, onClose);
+      saveDataToFileTxt(response.data.tableData, fileName, onClose);
     } catch (error) {
       console.error("Błąd podczas dodawania pytania:", error);
     }

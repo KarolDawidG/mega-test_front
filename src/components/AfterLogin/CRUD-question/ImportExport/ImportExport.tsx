@@ -1,21 +1,24 @@
 import React, { useState } from "react";
-import { ExportData } from "./ExportData";
+import { ExportDataTxt } from "./TXT/ExportDataTxt";
+import { ExportDataPdf } from "./PDF/ExportDataPdf";
 import { ImportData } from "./ImportData";
-import { InsertQuestion } from "../InsertQuestion/InsertQuestion";
 import "bootstrap/dist/css/bootstrap.css";
-import { RedirectBtn } from "../../../../Others/RedirectBtn";
+import { RedirectBtn } from "../../../Others/RedirectBtn";
+import { InsertQuestion } from "../InsertInTable/InsertQuestion/InsertQuestion";
+import { ImportExportMainProps } from "./helpers/ImportExportMainProps";
 
-interface ImportExportProps {
-  tableName: string | undefined;
-}
-
-export const ImportExport: React.FC<ImportExportProps> = ({ tableName }) => {
+export const ImportExport: React.FC<ImportExportMainProps> = ({ tableName }) => {
   const [exportVisible, setExportVisible] = useState(false);
+  const [exportVisiblePdf, setExportVisiblePdf] = useState(false);
   const [importVisible, setImportVisible] = useState(false);
   const [insertVisible, setInsertVisible] = useState(false);
 
   const handleExportClick = () => {
     setExportVisible(true);
+  };
+
+  const handleExportClickPdf = () => {
+    setExportVisiblePdf(true);
   };
 
   const handleImportClick = () => {
@@ -31,28 +34,40 @@ export const ImportExport: React.FC<ImportExportProps> = ({ tableName }) => {
       <div className="btn-group" role="group" aria-label="Import Export Button">
         <RedirectBtn to="/crud-question?">Back</RedirectBtn>
         <button
-          className="btn btn-lg btn-outline-primary"
+          className="btn btn-sm btn-outline-primary"
           onClick={handleImportClick}
         >
           Import
         </button>
         <button
-          className="btn btn-lg btn-outline-secondary"
+          className="btn btn-sm btn-outline-secondary"
           onClick={handleExportClick}
         >
-          Eksport
+          Eksport Txt
         </button>
         <button
-          className="btn btn-lg btn-outline-success"
+          className="btn btn-sm btn-outline-secondary"
+          onClick={handleExportClickPdf}
+        >
+          Eksport Pdf
+        </button>
+        <button
+          className="btn btn-sm btn-outline-success"
           onClick={handleInsertClick}
         >
           Insert
         </button>
       </div>
       {exportVisible && (
-        <ExportData
+        <ExportDataTxt
           tableName={tableName}
           onClose={() => setExportVisible(false)}
+        />
+      )}
+      {exportVisiblePdf && (
+        <ExportDataPdf
+          tableName={tableName}
+          onClose={() => setExportVisiblePdf(false)}
         />
       )}
       {importVisible && (
