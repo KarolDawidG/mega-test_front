@@ -15,7 +15,7 @@ export const ExportDataPdf: React.FC<ImportExportProps> = ({
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/export/${tableName}`,
+        `https://backend-test.ct8.pl/export/${tableName}`,
       );
       setPdfData(response.data.tableData);
     } catch (error) {

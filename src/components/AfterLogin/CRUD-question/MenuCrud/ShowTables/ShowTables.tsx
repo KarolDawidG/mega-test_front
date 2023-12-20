@@ -31,7 +31,7 @@ export const ShowTables = () => {
       setUsername(savedUsername);
     }
     axios
-      .get(`http://localhost:3001/create-table/${savedUsername}`)
+      .get(`https://backend-test.ct8.pl/create-table/${savedUsername}`)
       .then((response) => {
         const {
           data: { tablesUser: tableNamesArray },

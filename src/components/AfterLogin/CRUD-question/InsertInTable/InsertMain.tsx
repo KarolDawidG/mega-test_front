@@ -29,7 +29,7 @@ export const InsertMain = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3001/create-question/${tableName}`,
+          `https://backend-test.ct8.pl/create-question/${tableName}`,
         );
         const {
           data: { quizzesList: questionsList },
