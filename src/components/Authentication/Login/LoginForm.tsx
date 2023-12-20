@@ -28,6 +28,7 @@ export const LoginForm = () => {
           minLength={4}
           type="text"
           id="username"
+          placeholder="dupa 2"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           style={{
@@ -44,6 +45,7 @@ export const LoginForm = () => {
           minLength={8}
           type="password"
           id="password"
+          placeholder="dupa"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           style={{
