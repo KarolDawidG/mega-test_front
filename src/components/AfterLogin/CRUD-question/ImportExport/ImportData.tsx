@@ -67,7 +67,7 @@ export const ImportData: React.FC<ImportExportProps> = ({
 
   const saveDataToServer = async (jsonData: any) => {
     try {
-      await axios.post(`https://backend-test.ct8.pl/import/${tableName}`, jsonData);
+      await axios.post(`https://mega-test.ct8.pl/import/${tableName}`, jsonData);
     } catch (error) {
       console.error("Error while adding a question: ", error);
     }

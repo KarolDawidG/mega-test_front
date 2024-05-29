@@ -24,7 +24,7 @@ export const EditForm: React.FC<EditFormProps> = ({
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
+    setFormData((prevData:any) => ({
       ...prevData,
       [name]: value,
     }));
@@ -35,7 +35,7 @@ export const EditForm: React.FC<EditFormProps> = ({
 
     try {
       await axios.put(
-        `https://backend-test.ct8.pl/create-question/${tableName}/${question.id}`,
+        `https://mega-test.ct8.pl/create-question/${tableName}/${question.id}`,
         formData,
       );
 

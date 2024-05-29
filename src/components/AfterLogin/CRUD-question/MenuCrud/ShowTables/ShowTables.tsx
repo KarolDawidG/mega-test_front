@@ -16,7 +16,7 @@ export const ShowTables = () => {
 
   const handleDelete = async (tableName: any) => {
     try {
-      await axios.delete(`https://backend-test.ct8.pl/${tableName}`);
+      await axios.delete(`https://mega-test.ct8.pl/${tableName}`);
       const updatedTableNames = tableNames.filter((name) => name !== tableName);
       setTableNames(updatedTableNames);
     } catch (error: any) {
@@ -31,7 +31,7 @@ export const ShowTables = () => {
       setUsername(savedUsername);
     }
     axios
-      .get(`https://backend-test.ct8.pl/create-table/${savedUsername}`)
+      .get(`https://mega-test.ct8.pl/create-table/${savedUsername}`)
       .then((response) => {
         const {
           data: { tablesUser: tableNamesArray },

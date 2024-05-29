@@ -21,7 +21,7 @@ export const TableList = () => {
       setUsername(savedUsername);
     }
     axios
-      .get(`https://backend-test.ct8.pl/create-table/${savedUsername}`)
+      .get(`https://mega-test.ct8.pl/create-table/${savedUsername}`)
       .then((response) => {
         const {
           data: { tablesUser: tableNamesArray },

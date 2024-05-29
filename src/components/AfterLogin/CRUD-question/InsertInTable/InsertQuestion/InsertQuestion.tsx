@@ -34,7 +34,7 @@ export const InsertQuestion: React.FC<ImportExportProps> = ({
 
     try {
       await axios.post(
-        `https://backend-test.ct8.pl/create-question/${tableName}`,
+        `https://mega-test.ct8.pl/create-question/${tableName}`,
         formData,
       );
 
